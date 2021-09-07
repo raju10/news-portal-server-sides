@@ -28,6 +28,10 @@ const newsSchema = mongoose.Schema({
       type: String,
     },
   },
+  loginUser: {
+    loginUserEmail: String,
+    loginUserName: String,
+  },
 });
 //console.log(todoSchema);
 

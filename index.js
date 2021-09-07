@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 //const MongoClient = require('mongodb').MongoClient;
 const newsHandler = require("./routeHandler/newsHandler");
-
+const addAdmainHandler = require("./routeHandler/addAdmainHandler");
 // declier the port
 const port = 1000;
 // express app initialization
@@ -24,7 +24,7 @@ mongoose
 
 // application routes
 app.use("/news", newsHandler);
-
+app.use("/addAdmain", addAdmainHandler);
 // function err handelar
 function errHandelar(err, req, res, next) {
   if (res.headersSet) {

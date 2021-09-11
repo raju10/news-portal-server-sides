@@ -25,6 +25,7 @@ mongoose
 // application routes
 app.use("/news", newsHandler);
 app.use("/addAdmain", addAdmainHandler);
+
 // function err handelar
 function errHandelar(err, req, res, next) {
   if (res.headersSet) {

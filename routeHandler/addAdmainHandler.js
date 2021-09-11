@@ -29,6 +29,7 @@ router.get("/:id", async (req, res) => {});
 
 router.post("/", (req, res) => {
   const newAdmain = new Admain(req.body);
+  console.log(newAdmain);
   newAdmain.save((err) => {
     if (err) {
       res.status(500).json({
@@ -106,5 +107,25 @@ router.delete("/:id", async (req, res) => {
     }
   });
 });
+
+/////////
+// Get single user MakeAdmins
+router.get("/:email", async (req, res) => {
+  const email = req.params.email;
+
+  await Admain.find({ email: email }, (err, data) => {
+    if (err) {
+      res.status(500).json({
+        error: "Ops.... Somthing else. ",
+      });
+    } else {
+      res.status(200).json({
+        data: data,
+        messages: "Success",
+      });
+    }
+  });
+});
+////////
 
 module.exports = router;

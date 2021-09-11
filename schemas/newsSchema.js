@@ -7,6 +7,7 @@ const newsSchema = mongoose.Schema({
   catagory: {
     type: String,
   },
+
   imgUrl: {},
   status: {
     type: String,
@@ -27,6 +28,7 @@ const newsSchema = mongoose.Schema({
     description: {
       type: String,
     },
+    author: { type: String },
   },
   loginUser: {
     loginUserEmail: String,

@@ -110,9 +110,9 @@ router.delete("/:id", async (req, res) => {
 
 /////////
 // Get single user MakeAdmins
-router.get("/:email", async (req, res) => {
+router.get("/isAdmain/:email", async (req, res) => {
   const email = req.params.email;
-
+  console.log(email);
   await Admain.find({ email: email }, (err, data) => {
     if (err) {
       res.status(500).json({
